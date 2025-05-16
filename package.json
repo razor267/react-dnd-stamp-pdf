@@ -1,0 +1,39 @@
+{
+  "name": "react-dnd-stamp-pdf",
+  "version": "1.0.0",
+  "description": "The library allows you to select the location for the stamp in the PDF document",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razor267/react-dnd-stamp-pdf.git"
+  },
+  "author": "Baiborin Petr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/razor267/react-dnd-stamp-pdf/issues"
+  },
+  "homepage": "https://github.com/razor267/react-dnd-stamp-pdf#readme",
+  "keywords": [
+    "react",
+    "pdf",
+    "stamp",
+    "drag and drop"
+  ],
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-pdf": "^9.2.1"
+  },
+  "devDependencies": {
+    "@react-pdf/types": "^2.9.0",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@types/react-pdf": "^7.0.0",
+    "typescript": "^5.8.3"
+  }
+}
