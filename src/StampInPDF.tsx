@@ -77,10 +77,12 @@ const StampInPDF: React.FC<componentProps> = ({
         setStampPosition({x, y})
     }, [isDragging, dragOffset])
 
-    const handleMouseUp = useCallback(() => {
-        setIsDragging(false)
-        changeStampPosition()
-    }, [])
+    const handleMouseUp = () => {
+        if (isDragging) {
+            setIsDragging(false)
+            changeStampPosition()
+        }
+    }
 
     // изменяем данные о странице и местоположении штампа
     const changeStampPosition = (): void => {
