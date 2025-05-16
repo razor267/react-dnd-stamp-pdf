@@ -1,4 +1,4 @@
-import React, {useRef, useState, useCallback} from 'react'
+import React, {useRef, useState, useCallback, useEffect} from 'react'
 import {Document, Page, pdfjs} from 'react-pdf'
 import {PdfDimensions, Position, componentProps} from './types'
 
@@ -102,12 +102,14 @@ const StampInPDF: React.FC<componentProps> = ({
     }
 
     // переход на пред. страницу
-    const goToPrevPage = () =>
-        setPageNumber(prev => Math.max(prev - 1, 1))
+    const goToPrevPage = () => setPageNumber(prev => Math.max(prev - 1, 1))
 
     // переход на след. страницу
-    const goToNextPage = () =>
-        setPageNumber(prev => (numPages ? Math.min(prev + 1, numPages) : prev))
+    const goToNextPage = () => setPageNumber(prev => (numPages ? Math.min(prev + 1, numPages) : prev))
+
+    useEffect(() => {
+        changeStampPosition()
+    }, [pdfDimensions])
 
     return (
         <div className="react-dnd-stamp-pdf-container" style={{...globalStyle}}>
